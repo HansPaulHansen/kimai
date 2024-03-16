@@ -75,6 +75,10 @@ RUN apk add --no-cache \
     # xsl
     libxslt-dev
 
+# qrencode for swiss-qr invoice
+RUN apt-get update
+RUN apt-get install -y \
+        qrencode
 
 # apache debian php extension base
 FROM php:${PHP_VER}-apache-bookworm AS apache-php-ext-base
@@ -85,7 +89,7 @@ RUN apt-get install -y \
         libpng-dev \
         libzip-dev \
         libxslt1-dev \
-        libfreetype6-dev
+        libfreetype6-dev 
 
 
 # php extension gd - 13.86s
