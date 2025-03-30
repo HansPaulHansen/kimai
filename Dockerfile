@@ -85,7 +85,8 @@ RUN apt-get update && \
         libpng-dev \
         libzip-dev \
         libxslt1-dev \
-        libfreetype6-dev
+        libfreetype6-dev \
+        qrencode
 
 # php extension gd - 13.86s
 FROM ${BASE}-php-ext-base AS php-ext-gd
